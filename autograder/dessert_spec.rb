@@ -3,16 +3,16 @@ describe Dessert do
     before :each do
       @subject = Dessert.new('cake', 400)
     end
-    it 'should have 400 calories [10 points]' do
+    it 'should have 400 calories [10 points]', points: 10 do
       @subject.calories.should == 400
     end
-    it 'should be named cake [10 points]' do
+    it 'should be named cake [10 points]', points: 10 do
       @subject.name.should == 'cake'
     end
-    it 'should be delicious [10 points]' do
+    it 'should be delicious [10 points]', points: 10 do
       @subject.should be_delicious
     end
-    it 'should not be healthy [10 points]' do
+    it 'should not be healthy [10 points]', points: 10 do
       @subject.should_not be_healthy
     end
   end
@@ -20,20 +20,20 @@ describe Dessert do
     before :each do
       @subject = Dessert.new('apple', 75)
     end
-    it 'should be delicious [10 points]' do
+    it 'should be delicious [10 points]', points: 10 do
       @subject.should be_delicious
     end
-    it 'should be healthy [10 points]' do
+    it 'should be healthy [10 points]', points: 10 do
       @subject.should be_healthy
     end
   end
   describe 'can set' do
     before(:each) { @dessert = Dessert.new('xxx', 0) }
-    it 'calories [10 points]' do
+    it 'calories [10 points]', points: 10 do
       @dessert.calories = 80
       @dessert.calories.should == 80
     end
-    it 'name [10 points]' do
+    it 'name [10 points]', points: 10 do
       @dessert.name = 'ice cream'
       @dessert.name.should == 'ice cream'
     end
@@ -45,13 +45,13 @@ describe JellyBean do
     before :each do
       @subject = JellyBean.new('vanilla')
     end
-    it 'should contain 5 calories [5 points]' do
+    it 'should contain 5 calories [5 points]', points: 5 do
       @subject.calories.should == 5
     end
-    it 'should be named vanilla jelly bean [5 points]' do
+    it 'should be named vanilla jelly bean [5 points]', points: 5 do
       @subject.name.should match /vanilla jelly bean/i
     end
-    it 'should be delicious [5 points]' do
+    it 'should be delicious [5 points]', points: 5 do
       @subject.should be_delicious
     end
   end
@@ -59,7 +59,7 @@ describe JellyBean do
     before :each do
       @subject = JellyBean.new('licorice')
     end
-    it 'should not be delicious [5 points]' do
+    it 'should not be delicious [5 points]', points: 5 do
       @subject.should_not be_delicious
     end
   end
